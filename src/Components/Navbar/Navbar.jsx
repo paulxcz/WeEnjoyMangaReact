@@ -25,9 +25,9 @@ export const Navbar = () => {
       </Link>
 
       <Flex gap={5}>
-        <Link to={"/Noticias"}>
+        {/* <Link to={"/Noticias"}>
           <Text sx={textNavBarStyles}>Noticias</Text>
-        </Link>
+        </Link> */}
         <Link to={"/Manga-Animes"}>
           <Text sx={textNavBarStyles}>Manga / Anime</Text>
         </Link>
@@ -46,7 +46,7 @@ export const Navbar = () => {
         )}
         {user.logged && (
           <Link to={"/ModsScreen"}>
-            <Text sx={textNavBarStyles}>Mod DashBoard😎</Text>
+            <Text sx={textNavBarStyles}>Herramientas</Text>
           </Link>
         )}
       </Flex>

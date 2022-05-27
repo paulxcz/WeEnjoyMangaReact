@@ -6,6 +6,7 @@ import { Navbar } from "../Components/Navbar/Navbar";
 import { AnimesRoute } from "./AnimesRoute";
 import { EnvioSugerenciaRoute } from "./EnvioSugerenciaRoute";
 import { HomeRoute } from "./HomeRoute";
+import { ModAdminScreen } from "./ModAdminScreen";
 import { ModDataScreen } from "./ModDataScreen";
 import { ModRegisterForm } from "./ModRegisterForm";
 import { ModsRoute } from "./ModsRoute";
@@ -30,6 +31,7 @@ export const AppRouter = () => {
           <Route path="/Enviar-sugerencia" element={<EnvioSugerenciaRoute />}></Route>
           <Route path="/ModsPanel" element={<ModsRoute />}></Route>
           <Route path="/ModData" element={<ModDataScreen />}></Route>
+          <Route path="/AdminPanel" element={<ModAdminScreen />}></Route>
           <Route path="/Register" element={<ModRegisterForm />}></Route>
           <Route path="/ModsScreen" element={
             <PrivateRoute>

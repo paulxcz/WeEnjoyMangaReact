@@ -19,7 +19,7 @@ import { AuthContext } from "../auth/authContext";
 import { Navigate } from "react-router-dom";
 import {
   getModInfoByUsername,
-  updateModData,
+  updateUserData,
 } from "../requests/Posts/PostRequests";
 import withReactContent from "sweetalert2-react-content";
 import Swal from "sweetalert2";
@@ -67,7 +67,7 @@ export const ModDataScreen = () => {
         const passwordString = data.password;
         data.password = sha256(data.password);
         delete data.dateOfBirthday;
-        updateModData(data).then((res) => {
+        updateUserData(data).then((res) => {
           if (res.result == 1) {
             
             const action = {

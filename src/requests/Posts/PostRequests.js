@@ -82,6 +82,27 @@ export const confirmAnime = async (id) => {
   return data;
 };
 
+export const confirmMod = async (id) => {
+  const myHeaders = new Headers();
+  myHeaders.append("Content-Type", "application/json");
+
+  const raw = JSON.stringify({ Id: id });
+
+  const requestOptions = {
+    method: "POST",
+    headers: myHeaders,
+    body: raw,
+    redirect: "follow",
+  };
+
+  const url = "https://localhost:44328/api/Anime/ConfirmMod";
+  const response = await fetch(url, requestOptions);
+  if (!response.ok) throw new Error("WARN", response.status);
+
+  const data = await response.json();
+  return data;
+};
+
 export const desactivateAnimeByMod = async (id) => {
   const myHeaders = new Headers();
   myHeaders.append("Content-Type", "application/json");
@@ -103,6 +124,27 @@ export const desactivateAnimeByMod = async (id) => {
   return data;
 };
 
+export const desactivateModByUser = async (id) => {
+  const myHeaders = new Headers();
+  myHeaders.append("Content-Type", "application/json");
+
+  const raw = JSON.stringify({ Id: id });
+
+  const requestOptions = {
+    method: "POST",
+    headers: myHeaders,
+    body: raw,
+    redirect: "follow",
+  };
+
+  const url = "https://localhost:44328/api/Anime/DesactivateMod";
+  const response = await fetch(url, requestOptions);
+  if (!response.ok) throw new Error("WARN", response.status);
+
+  const data = await response.json();
+  return data;
+};
+
 export const deleteAnimeById = async (animeId) => {
   var requestOptions = {
     method: "POST",
@@ -110,6 +152,20 @@ export const deleteAnimeById = async (animeId) => {
   };
 
   const url = `https://localhost:44328/api/Anime/DeleteAnimeById/${animeId}`;
+  const response = await fetch(url, requestOptions);
+  if (!response.ok) throw new Error("WARN", response.status);
+
+  const data = await response.json();
+  return data;
+};
+
+export const deleteModById = async (modId) => {
+  var requestOptions = {
+    method: "POST",
+    redirect: "follow",
+  };
+
+  const url = `https://localhost:44328/api/Anime/DeleteModById/${modId}`;
   const response = await fetch(url, requestOptions);
   if (!response.ok) throw new Error("WARN", response.status);
 
@@ -159,7 +215,7 @@ export const getModInfoByUsername = async (mod) => {
   return data;
 };
 
-export const updateModData = async (mod) => {
+export const updateUserData = async (mod) => {
   const myHeaders = new Headers();
   myHeaders.append("Content-Type", "application/json");
 
@@ -171,7 +227,7 @@ export const updateModData = async (mod) => {
     body: raw,
     redirect: "follow",
   };
-  const url = "https://localhost:44328/api/Anime/UpdateModData";
+  const url = "https://localhost:44328/api/Anime/UpdateUserData";
 
   const response = await fetch(url, requestOptions);
   if (!response.ok) throw new Error("WARN", response.status);

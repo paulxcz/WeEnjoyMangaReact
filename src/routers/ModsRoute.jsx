@@ -33,10 +33,11 @@ export const ModsRoute = () => {
     const passwordString = data.password;
     data.password = sha256(data.password);
     const res = await postAccess(data);
+    console.log(res);
     if (res.result === 1) {
       const action = {
         type: types.login,
-        payload: { name: res.data.username, password: passwordString, id: res.data.id },
+        payload: { name: res.data.username, password: passwordString, id: res.data.id, rol: res.data.idRol },
       };
 
       dispatch(action);

@@ -13,12 +13,12 @@ export const AnimeCard = ({imgId, animeName ,animeDescription='kakakkaka'}) => {
         <Text fontSize={"lg"} noOfLines={9} fontWeight={"bold"}>
           {animeDescription}
         </Text>
-        <button>
+        {/* <button>
           <i className="fab fa-youtube"></i>
           <a href="https://www.youtube.com/watch?v=t6QI3nNSfMA" target="blank">
             Ver trailer on YouTube
           </a>
-        </button>
+        </button> */}
       </div>
     </div>
   );
