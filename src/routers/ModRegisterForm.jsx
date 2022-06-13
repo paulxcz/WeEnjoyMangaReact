@@ -130,9 +130,9 @@ export const ModRegisterForm = () => {
         <FormLabel mt={5}>Fecha de Nacimiento:</FormLabel>
         <Input
           as={"input"}
-          name="dateOfBirth"
+          name="dateOfBirthday"
           type={"date"}
-          {...register("dateOfBirth", {
+          {...register("dateOfBirthday", {
             required: "Campo requeridos",
             max: {
               value: today,
