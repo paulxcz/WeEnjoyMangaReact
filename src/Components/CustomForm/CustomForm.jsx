@@ -78,7 +78,11 @@ export const CustomForm = () => {
         {...register("animeName", {
           required: errorTypes.required,
           maxLength: { value: 50, message: "Ha ingesado más de 50 caracteres" },
-          validate : v => !!v.trim() || "Espacios en blanco no validos"
+          validate : v => !!v.trim() || "Espacios en blanco no validos",
+          pattern : {
+            value: /^[a-zA-Z\s]*$/,
+            message: 'Solo se pueden ingresar Letras'
+          }
         })}
       />
       {errors.animeName && (
@@ -132,7 +136,7 @@ export const CustomForm = () => {
           max: {
             value: today,
             message: "Ingresa una fecha inferior a la actual",
-          },
+          }
         })}
       />
       {errors.dateCreated && (

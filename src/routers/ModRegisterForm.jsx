@@ -93,9 +93,13 @@ export const ModRegisterForm = () => {
               value: 10,
               message: "Por favor ingrese como máximo 10 caracteres",
             },
+            pattern : {
+              value: /^[a-zA-Z0-9\s]*$/,
+              message: 'No se permiten caracteres especiales'
+            }
           })}
         />
-        {errors.user && (
+        {errors.userName && (
           <FormErrorMessage>{errors.userName.message}</FormErrorMessage>
         )}
         <FormLabel mt={5}>Contraseña:</FormLabel>
@@ -111,6 +115,10 @@ export const ModRegisterForm = () => {
                 value: 10,
                 message: "Por favor ingrese como máximo 10 caracteres",
               },
+              pattern : {
+                value: /^[a-zA-Z0-9\s]*$/,
+                message: 'No se permiten caracteres especiales'
+              }
             })}
           />
           <InputRightElement width="4.5rem">
