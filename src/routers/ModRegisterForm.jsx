@@ -158,14 +158,13 @@ export const ModRegisterForm = () => {
           {...register("reasonToBeMod", {
             required: "Campo requerido",
             maxLength: {
-              value: 8000,
-              message: "Ha superado los 8000 caracteres",
+              value: 200,
+              message: "Ha superado los 200 caracteres",
             },
             minLength: {
               value: 50,
               message: "Debe ingresar mínimo 50 caracteres",
-            },
-            validate : v => v.split(" ").filter(word => word !== '').length <= 200 || "Debe ingresar máximo 200 palabras",
+            }
           })}
         ></Textarea>
         {errors.reasonToBeMod && (
