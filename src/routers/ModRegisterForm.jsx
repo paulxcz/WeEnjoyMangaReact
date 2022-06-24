@@ -148,8 +148,8 @@ export const ModRegisterForm = () => {
             },
           })}
         />
-        {errors.dateOfBirth && (
-          <FormErrorMessage>{errors.dateOfBirth.message}</FormErrorMessage>
+        {errors.dateOfBirthday && (
+          <FormErrorMessage>{errors.dateOfBirthday.message}</FormErrorMessage>
         )}
         <FormLabel mt={5}>¿Por qué deseas ser Mod?</FormLabel>
         <Textarea
@@ -157,18 +157,19 @@ export const ModRegisterForm = () => {
           mb={5}
           {...register("reasonToBeMod", {
             required: "Campo requerido",
+            maxLength: {
+              value: 8000,
+              message: "Ha superado los 8000 caracteres",
+            },
             minLength: {
               value: 50,
               message: "Debe ingresar mínimo 50 caracteres",
             },
-            maxLength: {
-              value: 200,
-              message: "Debe ingresar máximo 200 caracteres",
-            },
+            validate : v => v.split(" ").filter(word => word !== '').length <= 200 || "Debe ingresar máximo 200 palabras",
           })}
         ></Textarea>
         {errors.reasonToBeMod && (
-          <FormErrorMessage>{errors.reasonToBeMod.message}</FormErrorMessage>
+          <FormErrorMessage mb={5}>{errors.reasonToBeMod.message}</FormErrorMessage>
         )}
         <ReCAPTCHA
           sitekey="6LfhPvAeAAAAAOJiv4xd4YaTr8kwj2yL4CdxckGd"

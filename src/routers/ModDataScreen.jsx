@@ -111,7 +111,7 @@ export const ModDataScreen = () => {
         <Input
           name="username"
           {...register("username", {
-            required: "Es necesario colocar un usuario",
+            required: "Campo Usuario es requerido",
             maxLength: {
               value: 10,
               message: "Ha ingesado más de 10 caracteres",
@@ -151,8 +151,8 @@ export const ModDataScreen = () => {
             {...register("password", {
               required: "Campo requerido",
               maxLength: {
-                value: 15,
-                message: "Ha ingesado más de 15 caracteres",
+                value: 10,
+                message: "Ha ingesado más de 10 caracteres",
               },
               validate: (v) => !!v.trim() || "Espacios en blanco no validos",
               pattern: {
