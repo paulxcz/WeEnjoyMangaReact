@@ -10,7 +10,7 @@ export const getAnimes = async (idState = {}) => {
     body: raw,
     redirect: "follow",
   };
-  const url = "https://localhost:44328/api/Anime/GetAnimes";
+  const url = "https://localhost:7236/anime/GetAllAnimes";
   const response = await fetch(url, requestOptions);
   if (!response.ok) throw new Error("WARN", response.status);
 

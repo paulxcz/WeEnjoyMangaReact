@@ -9,7 +9,8 @@ export const AnimesRoute = () => {
   useEffect(() => {
     const body = {idState:1};
     getAnimes(body).then((animes) => {
-      setDataAnimes(animes.data);
+      setDataAnimes(animes);
+      console.log(animes);
     });
   }, []);
 
@@ -25,10 +26,10 @@ export const AnimesRoute = () => {
       {dataAnimes ? (
         dataAnimes.map((anime) => (
           <AnimeCard
-            imgId={anime.animeId}
-            animeName={anime.animeName}
-            animeDescription={anime.sinopsis}
-            key={anime.animeId}
+            imgPath={anime.AnimeImagePath}
+            animeName={anime.AnimeImage}
+            animeDescription={anime.AnimeDescription}
+            key={anime.IdAnime}
           />
         ))
       ) : (
